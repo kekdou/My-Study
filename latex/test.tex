@@ -1,0 +1,281 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{ctex}
+\usepackage{multirow}
+\usepackage{booktabs}
+
+\title{Test Latex \\ \large simple test}
+\author{kekdou \thanks{THU} \and
+kaf \thanks{神椿}}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+this is a simple test of latex.
+\end{abstract}
+
+\noindent \textbf{关键词:} latex, test
+
+\section{引言} \label{sec:intro}
+I only need this article to test some latex functions.
+
+\section{功能} \label{sec:functions}
+\subsection{文本样式} \label{sec:textstyle}
+我可以使用\textbf{加粗}，\textit{斜体}，和\underline{下划线}。
+我还可以使用不同大小的字体，如：
+\begin{itemize}
+\item \tiny{极小号字体}
+\item \scriptsize{小脚号字体}
+\item \footnotesize{脚注号字体}
+\item \small{小号字体}
+\item \normalsize{正常字体}
+\item \large{大号字体}
+\item \Large{更大号字体}
+\item \LARGE{特大号字体}
+\item \huge{超级大号字体}
+\end{itemize}
+
+\subsection{空格} \label{sec:space}
+空          格 \\
+空
+格 \\
+空\quad 格 \\
+空\qquad 格
+
+\subsection{换行} \label{sec:newline}
+这是第一行。\\
+这是第二行。
+
+这是新一段的第一行，不信看看缩进。
+
+\subsection{列表} \label{sec:list}
+无序列表：
+\begin{itemize}
+\item apple
+\item banana
+\item orange
+\end{itemize}
+
+\begin{itemize}
+\item apple
+\item banana
+\begin{itemize}
+\item tomato
+\item potato
+\end{itemize}
+\item orange
+\end{itemize}
+
+有序列表：
+\begin{enumerate}
+\item first step
+\item second step
+\item third step
+\end{enumerate}
+
+\begin{enumerate}
+\item first step
+\item second step
+\begin{enumerate}
+\item first step
+\item second step
+\end{enumerate}
+\item third step
+\end{enumerate}
+
+\subsection{数学公式} \label{sec:math}
+行内公式： \\
+牛顿第二定律是 $F=ma$
+
+独立公式： \\
+%这是一个没有编号的独立公式：
+\[
+x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}
+\]
+%这是一个有编号的独立公式：
+\begin{equation}
+y = ax^2 + bx + c
+\end{equation}
+关于多行公式的对齐问题：
+\begin{align}
+y&=(x+1)^2 \\      % \\用于换行
+ &=x^2 + 2x + 1    % &指定对齐点
+\end{align}
+
+\[
+\begin{pmatrix}
+a&b \\
+c&d
+\end{pmatrix}
+\]
+
+\[
+f(x) =
+\begin{cases}
+x^2+1 & \text{ if } x>0 \\
+0 & \text{ if } x = 0 \\
+x-1 & \text{ if } x<0
+\end{cases}
+\]
+
+\subsection{表格} \label{sec:table}
+这是一个段落，紧接着一个默认对齐的表格：
+\begin{tabular}{|l|l|}
+\hline
+第一行&文本 \\
+\hline
+第二行&文本 \\
+\hline
+\end{tabular}
+表格后的文本。
+
+\vspace{1cm}  %添加一些垂直间距
+
+这是一个段落，紧接着一个顶端对齐的表格：
+\begin{tabular}[t]{|l|l|}
+\hline
+第一行&文本 \\
+\hline
+第二行&文本 \\
+\hline
+\end{tabular}
+表格后的文本。
+
+\vspace{1cm}   %添加一些垂直间距
+
+这是一个段落，紧接着一个底端对齐的表格：
+\begin{tabular}[b]{|l|l|}
+\hline
+第一行&文本 \\
+\hline
+第二行&文本 \\
+\hline
+\end{tabular}
+表格后的文本。
+
+\vspace{1cm}   %添加一些垂直间距
+
+\begin{tabular}{|c|lll|p{4em}|}  
+\hline
+姓名&地理&生物&化学&备注 \\ 
+\hline
+小红&90&85&92&优秀 \\ 
+\hline
+张华&87&75&79&良好 \\ 
+\hline
+大明&91&75&97&存在偏科现象 \\ 
+\hline
+\end{tabular}
+
+\vspace{1cm}   %添加一些垂直间距
+
+\begin{tabular}{l @{--} r}
+  起始时间 & 结束时间 \\
+  10:00 & 11:00 \\
+  12:30 & 13:00 \\
+\end{tabular}
+
+\vspace{1cm}   %添加一些垂直间距
+
+\begin{tabular}{|c|c|c|}
+\hline
+\multicolumn{2}{|c|}{合并两列}&列3 \\
+\hline
+A&B&C \\
+\hline
+\end{tabular}
+
+\vspace{1cm}   %添加一些垂直间距
+
+\begin{tabular}{|c|c|c|}
+\hline
+\multirow{2}{*}{合并两行}&A&B \\ \cline{2-3}  %只画部分横线
+& C & D \\
+\hline
+\end{tabular}
+
+\vspace{1cm}   %添加一些垂直间距
+
+\begin{tabular}{|c|c|c|}
+\hline
+\multicolumn{2}{|c|}{\multirow{2}{*}{合并行和列}}&列3  \\ \cline{3-3}
+\multicolumn{2}{|c|}{}&列3 \\
+\hline
+A&B&C \\
+\hline
+\end{tabular}
+
+\vspace{1cm}   %添加一些垂直间距
+
+\begin{tabular}{|c|}
+\hline
+红 \\ \hline
+红 \vline 黄 \\ \hline
+红 \vline 黄 \vline 蓝 \\ \hline
+\end{tabular} 
+
+\vspace{1cm}   %添加一些垂直间距
+
+\begin{tabular}{|c|}
+\hline
+红 \\ 
+\hline
+\begin{tabular}{@{}c|c@{}}
+红&蓝 
+\end{tabular} \\
+\hline
+\begin{tabular}{@{}c|c|c@{}}
+红&蓝&黄
+\end{tabular} \\
+\hline
+\end{tabular}
+
+\vspace{1cm}   %添加一些垂直间距
+
+\begin{table}[h]
+\centering
+\caption{水果价格表}
+\label{tab:price}
+\begin{tabular}{|l|c|r|}
+\hline
+水果&数量&价格 \\
+\hline
+苹果&5&10 \\
+\hline
+香蕉&3&6 \\
+\hline
+\end{tabular}
+\end{table}
+
+\vspace{1cm}   %添加一些垂直间距
+
+\begin{table}[htbp]
+\centering
+\caption{三线表示例}
+\label{tab:example}
+\begin{tabular}{lcr}  %列中没有竖线
+\toprule   %顶线
+项目&数量&价格 \\
+\midrule   %中线
+苹果&5&10元 \\
+香蕉&3&6元 \\
+橙子&7&14元 \\
+\bottomrule % 底线
+\end{tabular}
+\end{table}
+
+\subsection{图片} \label{sec:figure}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\textwidth]{kaf.jpg}
+\caption{示例图片}
+\label{fig:flowchart}
+\end{figure}
+
+章节\ref{sec:math} \\
+章节\ref{sec:figure} \\
+\end{document}
